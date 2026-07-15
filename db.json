@@ -1,0 +1,21 @@
+{
+  "users": [
+    {
+      "name": "Shreedhar",
+      "email": "shree@983589",
+      "mobile": "9868757587",
+      "department": "CSE",
+      "course": "JFS",
+      "id": "D2QOX1jZ-Jc"
+    },
+    {
+      "name": "Sunil",
+      "email": "sunil@gmail.com",
+      "mobile": "9878787565",
+      "department": "CSE",
+      "course": "JFS",
+      "id": "6dK9wIhUy9o"
+    }
+  ],
+  "$schema": "./node_modules/json-server/schema.json"
+}
