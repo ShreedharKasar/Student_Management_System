@@ -6,6 +6,13 @@ import { toast } from 'react-toastify'
 
 const ViewStudent = () => {
   const [students, setStudents] = useState([])
+  const[search,setSearch]=useState("")
+
+  const filteredStudents = students.filter((student) =>
+  student.name.toLowerCase().includes(search.toLowerCase()) ||
+  student.department.toLowerCase().includes(search.toLowerCase())
+);
+
   const navigate = useNavigate()
   function fetchData(){
     axios.get("http://localhost:3000/users")
@@ -31,11 +38,21 @@ const ViewStudent = () => {
     return (
     <>
     <Navbar/>
+
     <div className="student-container">
     <h1 className="title">🎓 Student Directory</h1>
 
+    <div className="search-box">
+    <input
+    type="text"
+    placeholder="🔍 Search by Name or Department..."
+    value={search}
+    onChange={(e) => setSearch(e.target.value)}
+    />
+    </div>
+
     <div className="student-list">
-    {students.map((x) => (
+    {filteredStudents.map((x) => (
       <div className="student-card" key={x.id}>
         <div className="card-header">
           <h2>{x.name}</h2>
