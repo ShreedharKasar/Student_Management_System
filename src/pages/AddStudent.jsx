@@ -3,6 +3,7 @@ import Navbar from '../components/Navbar'
 import axios from 'axios'
 import { toast } from 'react-toastify'
 import { useNavigate } from 'react-router-dom'
+
 const AddStudent = () => {
   const [name,setName] = useState("")
   const [email,setEmail] = useState("")
@@ -31,55 +32,56 @@ const AddStudent = () => {
     <Navbar/>
       <center><h1>Add Student</h1></center>
       <center>
-        <form onSubmit={handleForm}>
-          <input 
-          type="text" 
-          placeholder='Enter name' 
-          required
-          value={name}
-          onChange={(e)=>{setName(e.target.value)}}
-          /> 
-          <br />
+  <div className="student-form">
+    <h1>Add Student</h1>
 
-          <input 
-          type="text" 
-          placeholder='Enter Email' 
-          required
-          value={email}
-          onChange={(e)=>{setEmail(e.target.value)}}
-          /> 
-          <br />
+    <form onSubmit={handleForm}>
 
-          <input 
-          type="text" 
-          placeholder='Enter Mobile No' 
-          required
-          value={mobile}
-          onChange={(e)=>setMobile(e.target.value)}
-          /> 
-          <br />
+      <input
+        type="text"
+        placeholder="👤 Full Name"
+        required
+        value={name}
+        onChange={(e)=>setName(e.target.value)}
+      />
 
-          <input 
-          type="text" 
-          placeholder='Enter Department' 
-          required 
-          value={department}
-          onChange={(e)=>{setDepartment(e.target.value)}}
-          /> 
-          <br />
+      <input
+        type="email"
+        placeholder="📧 Email"
+        required
+        value={email}
+        onChange={(e)=>setEmail(e.target.value)}
+      />
 
-          <input 
-          type="text" 
-          placeholder='Enter Course' 
-          required
-          value={course}
-          onChange={(e)=>{setCourse(e.target.value)}}
-          /> 
-          <br />
+      <input
+        type="text"
+        placeholder="📱 Mobile Number"
+        required
+        value={mobile}
+        onChange={(e)=>setMobile(e.target.value)}
+      />
 
-          <button>Add</button>
-        </form>
-      </center>
+      <input
+        type="text"
+        placeholder="🏫 Department"
+        required
+        value={department}
+        onChange={(e)=>setDepartment(e.target.value)}
+      />
+
+      <input
+        type="text"
+        placeholder="📚 Course"
+        required
+        value={course}
+        onChange={(e)=>setCourse(e.target.value)}
+      />
+
+      <button type="submit">Add Student</button>
+
+    </form>
+  </div>
+</center>
     </>
   )
 }

@@ -3,6 +3,7 @@ import Navbar from '../components/Navbar'
 import axios from 'axios'
 import { useNavigate } from 'react-router-dom'
 import { toast } from 'react-toastify'
+
 const ViewStudent = () => {
   const [students, setStudents] = useState([])
   const navigate = useNavigate()
@@ -30,18 +31,42 @@ const ViewStudent = () => {
     return (
     <>
     <Navbar/>
-      <center><h1>Student List</h1></center>
-      {students.map((x)=>{
-        return <div>
-          <h3>Name: {x.name}</h3>
-          <p><b>Email:</b> {x.email}</p>
-          <p><b>Mobile:</b> {x.mobile}</p>
-          <p><b>Department:</b> {x.department}</p>
-          <p><b>Course:</b> {x.course}</p>
-          <button onClick={()=>{handleUpdate(x.id)}}>Edit</button>
-          <button onClick={()=>{handleDelete(x.id)}}>Delete</button>
+    <div className="student-container">
+    <h1 className="title">🎓 Student Directory</h1>
+
+    <div className="student-list">
+    {students.map((x) => (
+      <div className="student-card" key={x.id}>
+        <div className="card-header">
+          <h2>{x.name}</h2>
+          <span>{x.department}</span>
         </div>
-      })}
+
+        <div className="card-body">
+          <p><strong>📧 Email:</strong> {x.email}</p>
+          <p><strong>📱 Mobile:</strong> {x.mobile}</p>
+          <p><strong>📚 Course:</strong> {x.course}</p>
+        </div>
+
+        <div className="card-buttons">
+          <button
+            className="edit-btn"
+            onClick={() => handleUpdate(x.id)}
+          >
+            Edit
+          </button>
+
+          <button
+            className="delete-btn"
+            onClick={() => handleDelete(x.id)}
+          >
+             Delete
+          </button>
+        </div>
+      </div>
+    ))}
+  </div>
+</div>
     </>
   )
 }

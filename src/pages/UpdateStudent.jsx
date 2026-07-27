@@ -39,57 +39,59 @@ const UpdateStudent = () => {
   return (
     <>
     <Navbar/>
-    <center><h1>Update Student</h1></center>
-    <center>
-        <form onSubmit={handleUpdate}>
-          <input 
-          type="text" 
-          placeholder='Enter name' 
-          required
-          value={name}
-          onChange={(e)=>{setName(e.target.value)}}
-          /> 
-          <br />
+    <div className="update-container">
+    <div className="update-card">
+    <h1> Update Student</h1>
 
-          <input 
-          type="text" 
-          placeholder='Enter Email' 
-          required
-          value={email}
-          onChange={(e)=>{setEmail(e.target.value)}}
-          /> 
-          <br />
+    <form onSubmit={handleUpdate}>
 
-          <input 
-          type="text" 
-          placeholder='Enter Mobile No' 
-          required
-          value={mobile}
-          onChange={(e)=>setMobile(e.target.value)}
-          /> 
-          <br />
+      <input
+        type="text"
+        placeholder="👤 Full Name"
+        value={name}
+        onChange={(e)=>setName(e.target.value)}
+        required
+      />
 
-          <input 
-          type="text" 
-          placeholder='Enter Department' 
-          required 
-          value={department}
-          onChange={(e)=>{setDepartment(e.target.value)}}
-          /> 
-          <br />
+      <input
+        type="email"
+        placeholder="📧 Email"
+        value={email}
+        onChange={(e)=>setEmail(e.target.value)}
+        required
+      />
 
-          <input 
-          type="text" 
-          placeholder='Enter Course' 
-          required
-          value={course}
-          onChange={(e)=>{setCourse(e.target.value)}}
-          /> 
-          <br />
+      <input
+        type="text"
+        placeholder="📱 Mobile Number"
+        value={mobile}
+        onChange={(e)=>setMobile(e.target.value)}
+        required
+      />
 
-          <button>Update</button>
-        </form>
-      </center>
+      <input
+        type="text"
+        placeholder="🏫 Department"
+        value={department}
+        onChange={(e)=>setDepartment(e.target.value)}
+        required
+      />
+
+      <input
+        type="text"
+        placeholder="📚 Course"
+        value={course}
+        onChange={(e)=>setCourse(e.target.value)}
+        required
+      />
+
+      <button type="submit" className="update-btn">
+        Update Student
+      </button>
+
+    </form>
+  </div>
+</div>
     </>
   )
 }

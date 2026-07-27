@@ -15,6 +15,22 @@
       "department": "CSE",
       "course": "JFS",
       "id": "6dK9wIhUy9o"
+    },
+    {
+      "name": "Gadi",
+      "email": "gadi@gmail.com",
+      "mobile": "8748642764",
+      "department": "CSE",
+      "course": "JFS",
+      "id": "2rdJGVbMEnA"
+    },
+    {
+      "name": "Ningaraj",
+      "email": "ningu@gmail.com",
+      "mobile": "2187569824",
+      "department": "CSE",
+      "course": "PFS",
+      "id": "Rs8cmN6FTWw"
     }
   ],
   "$schema": "./node_modules/json-server/schema.json"
